@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: go-server-argo-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/natanbs/argo-bootstrap
+    targetRevision: main
+    path: argo-app-go-server
+  destination:
+    namespace: go-server-ns
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
