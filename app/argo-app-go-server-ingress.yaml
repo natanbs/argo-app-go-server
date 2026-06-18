@@ -5,15 +5,15 @@ metadata:
   namespace: go-server-ns
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
+    traefik.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: go.local
-    http:
+  - http:
       paths:
       - backend:
           service:
             name: argo-app-go-server
             port:
               number: 8090
-        path: /argo-app-go-server
+        path: /
         pathType: Prefix
