@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       labels:
-        app: iargo-app-go-server
+        app: argo-app-go-server
     spec:
       containers:
       - name: argo-app-go-server
