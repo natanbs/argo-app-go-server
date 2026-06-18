@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/natanbs/argo-bootstrap
+    repoURL: https://github.com/natanbs/go-server.git
     targetRevision: main
-    path: argo-app-go-server
+    path: .
   destination:
     namespace: go-server-ns
     server: https://kubernetes.default.svc
