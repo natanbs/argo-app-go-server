@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: go-server
+  name: argo-app-go-server
   namespace: go-server-ns
 spec:
   selector:
     matchLabels:
-      app: go-server
+      app: argo-app-go-server
   replicas: 1
   minReadySeconds: 1
   strategy:
@@ -17,10 +17,10 @@ spec:
   template:
     metadata:
       labels:
-        app: go-server
+        app: iargo-app-go-server
     spec:
       containers:
-      - name: go-server
+      - name: argo-app-go-server
         image: k3d-reg:5000/argo-app-go-server:v1.0
         ports:
         - containerPort: 8090
