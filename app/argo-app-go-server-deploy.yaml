@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: go-server
-        image: localhost:50000/argo-app-go-server:v1.0
+        image: k3d-reg:5000/argo-app-go-server:v1.0
         ports:
         - containerPort: 8090
