@@ -22,7 +22,7 @@ spec:
       containers:
       - name: argo-app-go-server
         # 🌟 envsubst will find this variable and replace it with your script's argument
-        image: k3d-reg:5000/argo-app-go-server:v1.4
+        image: k3d-reg:5000/argo-app-go-server:${IMAGE_TAG}
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8090
