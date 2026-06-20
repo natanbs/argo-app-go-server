@@ -27,3 +27,5 @@ docker push "localhost:${REG_PORT}/argo-app-go-server:${TAG}"
 
 echo Create argo application argo-app-go-server
 kubectl apply -f app/argo-app-go-server-app.yaml
+
+yq -i ".spec.template.spec.containers[0].image.tag = \"${TAG}\"" app/argo-app-go-server-deploy.yaml
