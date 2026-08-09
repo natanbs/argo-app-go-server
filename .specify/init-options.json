@@ -1,10 +1,6 @@
 {
   "ai": "opencode",
-  "feature_numbering": "sequential",
-  "here": true,
   "integration": "opencode",
   "script": "sh",
-  "speckit_version": "unknown",
-  "team_ai_directives": "../agentic-sdlc-team-ai-directives"
+  "speckit_version": "unknown"
 }
-~  
