@@ -5,10 +5,11 @@ metadata:
   namespace: go-server-ns
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
-    traefik.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: traefik
   rules:
-  - http:
+  - host: go-server.lab
+    http:
       paths:
       - backend:
           service:

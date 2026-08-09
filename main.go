@@ -26,11 +26,15 @@ func osHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8090"
+	}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello from Go server on port 8090!\n")
+		fmt.Fprintf(w, "Hello from Go server on port %s!\n", port)
 	})
 	http.HandleFunc("/health", healthHandler)
 	http.HandleFunc("/os", osHandler)
-	log.Println("Go server listening on :8090")
-	log.Fatal(http.ListenAndServe(":8090", nil))
+	log.Printf("Go server listening on :%s\n", port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }

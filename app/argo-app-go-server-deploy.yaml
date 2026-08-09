@@ -24,5 +24,8 @@ spec:
         # 🌟 envsubst will find this variable and replace it with your script's argument
         image: k3d-reg:5000/argo-app-go-server:v1.4
         imagePullPolicy: IfNotPresent
+        env:
+        - name: PORT
+          value: "8090"
         ports:
         - containerPort: 8090
