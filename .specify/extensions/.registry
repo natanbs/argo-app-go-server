@@ -71,11 +71,7 @@
           "team.verify"
         ]
       },
-      "registered_skills": [
-        "team-boot",
-        "team-discover",
-        "team-skills"
-      ],
+      "registered_skills": [],
       "installed_at": "2026-08-09T20:32:29.800257+00:00"
     }
   }

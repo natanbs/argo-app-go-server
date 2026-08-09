@@ -279,5 +279,8 @@
       "* $(*": "deny",
       "* `*": "deny"
     }
-  }
+  },
+  "plugin": [
+    "./.opencode/plugin/speckit-events.ts"
+  ]
 }
