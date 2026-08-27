@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-app-go-server
+  namespace: go-server-ns
+spec:
+  selector:
+    matchLabels:
+      app: argo-app-go-server
+  replicas: 1
+  minReadySeconds: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: argo-app-go-server
+    spec:
+      containers:
+      - name: argo-app-go-server
+        image: k3d-reg:5000/argo-app-go-server:v1.4
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: PORT
+          value: "8090"
+        ports:
+        - containerPort: 8090
